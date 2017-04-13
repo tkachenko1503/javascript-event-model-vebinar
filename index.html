@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title> Событийная модель JavaScript</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1> Событийная модель JavaScript</h1>
+		<p>GeekBrains</p>
+	</header>
+
+	<section class="slide" id="cover">
+		<h2> Событийная модель JavaScript</h2>
+		<p><a href="https://github.com/tkachenko1503">Ткаченко Сергей</a></p>
+		<style>
+			#cover h2 {
+				margin:30px 0 0;
+				color:#000;
+				text-align:center;
+				font-size:70px;
+				}
+			#cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#000;
+				font-style:italic;
+				font-size:20px;
+				}
+				#cover p a {
+					color:#000;
+					}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>О чём пойдёт речь?</h2>
+		<p>
+
+		</p>
+	</section>
+
+	<section class="slide">
+		<h2>Javascript</h2>
+		<h4>Back to school</h4>
+	</section>
+	
+	<section class="slide">
+		<h2>Браузер</h2>
+		<figure>
+			<img class="cover" src="pictures/layers.png" alt="Orange typewriter on a wooden table close-up">
+			<figcaption class="white">
+				<!--<a href="http://fiftyfootshadows.net/">© John Carey</a>-->
+			</figcaption>
+		</figure>
+		<style>
+			#picture h2 {
+				color:#FFF;
+				}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Асинхронные операции</h2>
+		<ol>
+			<li>Загрузка контента</li>
+			<li>Ожидание пользовательского ввода</li>
+			<li>Отправка форм на сервер</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/js_runtime.png" alt="Orange typewriter on a wooden table close-up">
+			<figcaption class="white">
+				<!--<a href="http://fiftyfootshadows.net/">© John Carey</a>-->
+			</figcaption>
+		</figure>
+		<style>
+			#picture h2 {
+				color:#FFF;
+				}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Вопросы?</h2>
+	</section>
+
+	<section class="slide">
+		<h2>Паттерны</h2>
+		<p>Паттерн - способ решения часто встречаемых задач</p>
+
+		<ol>
+			<li>Pub/Sub</li>
+			<li>EventEmitter</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2>Pub/Sub</h2>
+		<p>Плюсы</p>
+		<ol>
+			<li>Простой</li>
+			<li>Помогает разделять код</li>
+		</ol>
+		
+		<p>Минусы</p>
+		<ol>
+			<li>Может вырости до слишком больших размеров</li>
+			<li>Возможны коллизии в событиях</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2>EventEmitter</h2>
+		<p>Плюсы</p>
+		<ol>
+			<li>Более селективные события</li>
+			<li>Помагает архитектурно структурировать код</li>
+			<li>Очень популярен</li>
+		</ol>
+		
+		<p>Минусы</p>
+		<ol>
+			<li>Предпологает использование наследования</li>
+			<li>Возможна гонка событий</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2>DOM</h2>		
+		<h3>События в браузере реализованны через EventEmitter</h3>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/DOM_js_72.png" alt="Orange typewriter on a wooden table close-up">
+			<figcaption class="white">
+				<!--<a href="http://fiftyfootshadows.net/">© John Carey</a>-->
+			</figcaption>
+		</figure>
+		<style>
+			#picture h2 {
+				color:#FFF;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Фазы событий</h2>
+		<ol>
+			<li>Погружение</li>
+			<li>Захват</li>
+			<li>Всплытие</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<figure>
+			<img class="cover" src="pictures/eventflow@2x.png" alt="Orange typewriter on a wooden table close-up">
+			<figcaption class="white">
+				<!--<a href="http://fiftyfootshadows.net/">© John Carey</a>-->
+			</figcaption>
+		</figure>
+		<style>
+			#picture h2 {
+				color:#FFF;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Что мы уже знаем?</h2>
+		<ol>
+			<li>Javascript выполняется в одном потоке</li>
+			<li>Асинхронные вызовы реализованны с помощью Event Loop</li>
+			<li>Используем паттерны Pub/Sub и EventEmitter для
+				<ol>
+					<li>Для декомпозиции разных частей программы</li>
+					<li>Как способ синхронизации событий</li>
+				</ol>
+			</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2>Всегда есть "НО"</h2>
+		<ol>
+			<li>Приходится контролировать порядок подписки</li>
+			<li>В больших приложениях появляется очень много вспомогательного кода</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<h2>Другой подход</h2>
+		<p>События - это поток.</p>
+	</section>
+
+	<section class="slide">
+		<h2>Спасибо за внимание!</h2>
+	</section>
+
+	<footer class="badge">
+		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
+	</footer>
+
+	<div class="progress"></div>
+
+	<script src="node_modules/shower-core/shower.min.js"></script>
+	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
